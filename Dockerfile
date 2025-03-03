@@ -6,5 +6,8 @@ WORKDIR /tmp/wp-dist/
 # Install Wrangler globally
 RUN npm install -g wrangler
 
-# Default command to show wrangler help
-CMD ["wrangler", "--help"]
+# Install bash
+RUN apk add --no-cache bash
+
+# Set entrypoint to bash
+ENTRYPOINT ["/bin/bash"]
